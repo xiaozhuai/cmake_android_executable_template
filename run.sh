@@ -23,8 +23,8 @@ else
     bootMode=normal
 fi
 
-hostExecutable=build/Release-${abi}-${bootMode}/test_android_fb
-deviceExecutable=${pushDir}/test_android_fb
+hostExecutable=build/Release-${abi}-${bootMode}/android_hello_world
+deviceExecutable=${pushDir}/android_hello_world
 
 adb push ${hostExecutable} ${deviceExecutable}
 adb shell chmod 755 ${deviceExecutable}
