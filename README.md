@@ -1,6 +1,6 @@
 # cmake_android_executable_template
 
-This a template project for build executable for android (including normal mode and recovery mode)
+A template project for building executable for android (including normal mode and recovery mode)
 
 ## Build & Run
 
