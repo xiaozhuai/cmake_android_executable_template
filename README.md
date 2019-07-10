@@ -19,7 +19,11 @@ A template project for building executable for android (including normal mode an
 1. For recovery mode, you should mount `/system` as `r/w` before run.
 2. For recovery mode, `libc` and `libm` are static linked.
 3. ~~For recovery mode, you may got a link issue with c++ stl, so I suggest **Pure C** instead of c++ if you need recovery mode support~~
-4. If c++ link issue occurred, uncomment this line in `CMakeLists.txt`, then `rm -rf build` and try again
+4. If c++ link issue occurred, try these steps in `CMakeLists.txt`
     ```cmake
+    # If c++ link issue occurred (-ldl not found), uncomment line blow, then `rm -rf build` and try again
     # string(REPLACE "-nodefaultlibs -lgcc -lc -lm -ldl" "" CMAKE_CXX_STANDARD_LIBRARIES ${CMAKE_CXX_STANDARD_LIBRARIES})
+    
+    # If c++ link issue occurred (multiple definition of `operator delete(void*)'), uncomment line blow, then `rm -rf build` and try again
+    #set(CMAKE_CXX_FLAGS "-fno-exceptions ${CMAKE_CXX_FLAGS}")
     ```
